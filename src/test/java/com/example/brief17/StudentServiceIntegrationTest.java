@@ -11,13 +11,29 @@ import com.example.brief17.service.StudentService;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import java.util.Optional;
-
-// TODO: Ajouter les tags nécessaires pour charger H2, charger le profil de test et importer le StudentService
+@DataJpaTest
+@ActiveProfiles("test")
+@Import(StudentService.class)
 class StudentServiceIntegrationTest {
+
+    @Autowired
+    StudentService studentService;
 
     @Test
     void shouldSaveAndRetrieveStudent() {
-        // TODO: Implémenter le test d'intégration, insérer un Student en base de données et le récupérrer
+
+        //GIVEN
+        Student student = new Student();
+        student.setName("Morgan");
+        student.setAddress("Niort");
+
+        // ACT
+        Student savedStudent = studentService.saveStudent(student);
+
+        //ASSERT
+        assertThat(savedStudent).isNotNull();
+        assertThat(savedStudent.getId()).isNotNull();  // L'ID doit être généré
+        assertThat(savedStudent.getName()).isEqualTo("Morgan");
+        assertThat(savedStudent.getAddress()).isEqualTo("Niort");
     }
 }
