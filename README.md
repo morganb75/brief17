@@ -11,4 +11,4 @@ La configuration est dans application-test.yml
 
 Chaque commit-push donne lieu à un build avec le run des tests.
 Le détail de la pipeline est dans ".github/workflows/pipeline.yml"
-Ajout de SonarQube Cloud pour reporting coverage
+Ajout de SonarQube Cloud pour reporting coverage 
