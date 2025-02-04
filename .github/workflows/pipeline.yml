@@ -30,7 +30,7 @@ jobs:
         run: >
           mvn sonar:sonar 
           -Dsonar.projectKey=morganb75 
-          -Dsonar.organization=your_organization 
+          -Dsonar.organization=morganb75 
           -Dsonar.host.url=https://sonarcloud.io 
           -Dsonar.login=${{ secrets.SONAR_TOKEN }} 
           -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
