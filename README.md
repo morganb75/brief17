@@ -1,11 +1,13 @@
 # brief17
 
+L'application fonctionne sur base Postgre Sql dont la config se trouve dans application.yml
+
 ## Test d'intégration
 
-Implémenter le test d'intégration pour vérifier que le StudentService insère bien en base un Student. 
-
-Vous devrez d'abord configurer l'application pour les tests grâce au fichier application-test.properties dans le dossier resources des tests.
+Un test d'intégration est mené dans test et le profile utilisé est celui sur une base H2
+La configuration est dans application-test.yml
 
 ## Utilisation de la CI Github pour lancer le test d'intégration
 
-Vous implémenterez une CI github pour lancer les tests de l'application.
+Chaque commit-push donne lieu à un build avec le run des tests.
+Le détail de la pipeline est dans ".github/workflows/pipeline.yml"
